@@ -247,15 +247,15 @@ set_cpu() {
 		'aarch64' | 'arm64')
 			cpu='arm64'
 			;;
+         	'riscv64')
+			cpu='riscv64'
+			;;
 		'mips' | 'mips64')
 			if is_little_endian; then
 				cpu="${cpu}le"
 			fi
 
 			cpu="${cpu}_softfloat"
-			;;
-      		'riscv64')
-			cpu='riscv64'
 			;;
 		*)
 			error_exit "unsupported cpu type: $cpu"
